@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blackjack in JS</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="div-confirm-box">
+        <div class="div-header">
+          <span class="p-header"></span>
+          <button class="btnX" disabled>X</button>
+        </div>
+        <div class="div-message">
+          <p class="p-message">Do you want to continue?</p>
+        </div>
+        <div class="div-for-btnYes-btnCancel">
+          <button class="btnYes" disabled>YES</button>
+          <button class="btnCancel" disabled>NO</button>
+        </div>
+      </div>
+      <div class="title">
+        <div class="title"><h2 class="bj">Blackjack</h2></div>
+      </div>
+      <div class="score-label">
+        <div class="tag">YOU</div>
+        <div class="for-mylife">
+          <div class="mylife-container">
+            <div class="mylife"></div>
+          </div>
+        </div>
+        <div class="tag">OPPONENT</div>
+        <div class="for-computerlife">
+          <div class="computerlife-container">
+            <div class="computerlife"></div>
+          </div>
+        </div>
+      </div>
+      <div class="for-score">
+        <div class="score-table">
+          <table>
+            <tr>
+              <th>YOU</th>
+              <th>DRAW</th>
+              <th>OPPONENT</th>
+            </tr>
+            <tr>
+              <td class="td-you">0</td>
+              <td class="td-draw">0</td>
+              <td class="td-computer">0</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="container">
+        <div class="div-for-cards for-img">
+          <div class="for-imgyou">
+            <div class="you">
+              <span class="span-you"></span><span id="plus-by-hero"></span>
+            </div>
+          </div>
+          <div class="for-imgcomputer">
+            <div class="computer">
+              <span class="span-computer"></span>
+            </div>
+            <!-- flipcard -->
+            <!-- card -->
+            <!-- image -->
+          </div>
+        </div>
+        <div class="heroes">
+          <div style="color: lawngreen"><small>BLACKJACK HEROES</small></div>
+          <div class="for-hero-img"></div>
+        </div>
+      </div>
+      <div class="main-for-btnquit-btnplay">
+        <div class="for-btnquit-btnplay">
+          <button class="hit" disabled>QUIT</button>
+          <button class="deal" disabled>PLAY</button>
+        </div>
+      </div>
+      <div class="main-instruction">
+        <div class="header-of-intruction">
+          <div><strong>Let's play</strong></div>
+          <div><strong>The</strong></div>
+          <div><strong>Blackjack</strong></div>
+          <br />
+          <p>A game only luckiest player WINS</p>
+          <p>It's gonna be best of 21 points per round</p>
+          <br />
+          <br />
+          <div class="reminders"><strong>Reminders</strong></div>
+          <br /><br />
+        </div>
+        <div class="first-division">
+          <li>
+            <p>Computer will both generate its own and your first two cards</p>
+          </li>
+          <br />
+          <li>
+            <p>
+              Computer will also automatically generate its third card if ain't
+              satisfied with the value of the first two cards
+            </p>
+          </li>
+          <br />
+          <li>
+            <p>Like the Computer you can HIT once to get your winning card</p>
+          </li>
+          <br />
+          <li>
+            <p>
+              The value of the card that you'll have hitted is deppends on your
+              fate to WIN
+            </p>
+          </li>
+        </div>
+
+        <br />
+        <div class="second-division">
+          <li>
+            <p>
+              Unlike the computer you could have the privilege to use the
+              Blackjack heroes provided you won three consecutive times or
+              atleast you will have gained higher score and should have cards
+              less than 10 total values
+            </p>
+          </li>
+          <br />
+          <li>
+            <p>
+              The values of the Blackjack hero cards will save you from
+              exceeding the best score 21
+            </p>
+          </li>
+          <br />
+          <li>
+            <p>
+              The game will about to end eithier yours or the computer life-bar
+              is alredy empty
+            </p>
+          </li>
+          <br />
+          <strong id="close">Close</strong>
+        </div>
+      </div>
+      <div class="opening">
+        <img class="img-opening" src="front.jpg" alt="" />
+        <img class="img-opening1" src="front.jpg" alt="" />
+        <img class="img-opening2" src="front.jpg" alt="" />
+        <div class="div-for-3btns">
+          <p class="btn-play">
+            <button id="btn-start"><strong>START</strong></button>
+          </p>
+          <p class="btn-exit">
+            <button id="btn-exit"><strong>EXIT</strong></button>
+          </p>
+          <p class="btn-instruction">
+            <button id="btn-instruction"><small>ABOUT</small></button>
+          </p>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
