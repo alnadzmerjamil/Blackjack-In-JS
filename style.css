@@ -156,22 +156,6 @@ table {
   flex-wrap: wrap;
   background-color: darkblue;
 }
-.you,
-.computer {
-  width: 15%;
-  font-size: 3.5vw;
-  font-weight: bolder;
-  font-family: 'Courier New', Courier, monospace;
-  text-transform: uppercase;
-  color: darkred;
-  margin-right: 5px;
-  position: relative;
-  top: -15px;
-  left: -5px;
-  height: 50px;
-  line-height: 50px;
-  border-radius: 50%;
-}
 .div-for-cards {
   width: 100%;
   display: flex;
@@ -187,23 +171,35 @@ table {
   background-color: darkblue;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: stretch;
-  padding: 10px;
+  padding: 5px;
   margin: 0;
 }
+.you,
+.computer {
+  width: 15%;
+  font-size: 3vw;
+  font-weight: bolder;
+  font-family: 'Courier New', Courier, monospace;
+  text-transform: uppercase;
+  text-align: left;
+  color: darkred;
+  position: relative;
+  top: -20px;
+  height: 50px;
+  line-height: 50px;
+}
 .card-for-me {
-  width: 20%;
+  width: 27%;
   background-color: cadetblue;
-  margin-right: 5px;
   border: 2px solid darkred;
   border-radius: 10px;
   box-shadow: 0 0 5px white;
 }
 .flip-container {
-  width: 20%;
+  width: 27%;
   position: relative;
-  margin-right: 5px;
 }
 .card {
   position: relative;
@@ -211,7 +207,6 @@ table {
   height: 100%;
   transform-style: preserve-3d;
   transition: all 2s ease;
-  background-color: hotpink;
   border-radius: 10px;
 }
 .front {
@@ -278,25 +273,23 @@ table {
   z-index: 1;
   box-shadow: 0 0 20px lightblue;
 }
-.figcaption-image {
-  position: relative;
+.heroInfo-container {
   width: 100%;
-  padding: 2px;
-  font-size: 0;
-  text-transform: capitalize;
-}
-.image:hover + .figcaption-image {
-  bottom: -10px;
+  position: relative;
   z-index: 2;
-  height: 5px;
-  line-height: 5px;
-  padding: 1px 0px 4px 2px;
-  font-size: 1.2vw;
-  transform: scale(2.5);
-  transition: 0.3s;
-  text-align: left;
-  background-color: rgb(248, 221, 99);
-  box-shadow: 0 0 10px darkblue inset;
+}
+.heroInfo {
+  width: 100%;
+  margin: 0 auto;
+  font-size: 0;
+  padding: 10px;
+  background-color: darkblue;
+  color: yellow;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+.heroInfo-class1 {
+  font-size: 3vw;
 }
 .main-for-btnquit-btnplay {
   width: 100%;
@@ -317,11 +310,16 @@ table {
   font-weight: bolder;
   font-size: 4vw;
   border-radius: 5px;
-  margin-right: 15px;
   background-color: darkblue;
   border: 1px solid white;
   outline: 0px;
   cursor: pointer;
+}
+.hit {
+  margin-right: 7.5px;
+}
+.deal {
+  margin-left: 7.5px;
 }
 .hit:hover {
   background-color: red;
@@ -526,6 +524,10 @@ table {
   .computerlife {
     height: 14px;
   }
+  .you,
+  .computer {
+    top: -10px;
+  }
 }
 /* for PC/Laptop */
 @media only screen and (min-width: 992px) {
@@ -587,6 +589,14 @@ table {
   .you,
   .computer {
     font-size: 2vw;
+    top: -10px;
+  }
+
+  .card-for-me {
+    width: 25%;
+  }
+  .flip-container {
+    width: 25%;
   }
   .opening {
     position: absolute;
@@ -651,6 +661,15 @@ table {
     font-size: 1.5vw;
   }
   .instruction-show {
+    font-size: 1.5vw;
+  }
+  .heroInfo-container {
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    top: 15px;
+  }
+  .heroInfo-class1 {
     font-size: 1.5vw;
   }
 }

@@ -9,37 +9,98 @@ let computerCurrentScore = 0;
 let computerCountSpan = document.querySelector('.span-computer');
 let forComputerCard = document.querySelector('.for-imgcomputer');
 let divHero = document.querySelector('.for-hero-img');
+//1
+const david = {
+  name: 'david',
+  rank: 'king',
+  kingdom: 'spades',
+};
+const pallas = {
+  name: 'pallas',
+  rank: 'queen',
+  kingdom: 'spades',
+};
+const ogier = {
+  name: 'ogier',
+  rank: 'jack',
+  kingdom: 'spades',
+};
+//2
+const alexandre = {
+  name: 'alexandre',
+  rank: 'king',
+  kingdom: 'clubs',
+};
+const argine = {
+  name: 'argine',
+  rank: 'queen',
+  kingdom: 'clubs',
+};
+const lancelot = {
+  name: 'lancelot',
+  rank: 'jack',
+  kingdom: 'clubs',
+};
+//3
+const charles = {
+  name: 'charles',
+  rank: 'king',
+  kingdom: 'hearts',
+};
+const judith = {
+  name: 'judith',
+  rank: 'queen',
+  kingdom: 'hearts',
+};
+const lahire = {
+  name: 'lahire',
+  rank: 'jack',
+  kingdom: 'hearts',
+};
+//4
+const caesar = {
+  name: 'caesar',
+  rank: 'king',
+  kingdom: 'diamonds',
+};
+const rachel = {
+  name: 'rachel',
+  rank: 'queen',
+  kingdom: 'diamonds',
+};
+const hector = {
+  name: 'hector',
+  rank: 'jack',
+  kingdom: 'diamonds',
+};
 //cards object
 let cards = {
   name: ['heart', 'diamond', 'flower', 'spade'],
   value: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
   heroes: [
-    'david',
-    'pallas',
-    'ogier',
-    'alexandre',
-    'argine',
-    'lancelot',
-    'lahire',
-    'charles',
-    'judith',
-    'caesar',
-    'hector',
-    'rachel',
+    david,
+    pallas,
+    ogier,
+    alexandre,
+    argine,
+    lancelot,
+    charles,
+    judith,
+    lahire,
+    caesar,
+    rachel,
+    hector,
   ],
   heroCards: function () {
     this.heroes.forEach(function (hero) {
       let figure = document.createElement('figure');
       figure.className = 'figure-my-hero';
       let heroImg = document.createElement('img');
-      heroImg.className = 'image';
-      heroImg.src = 'heroes/' + hero + '.jpg';
-      let figcaption = document.createElement('figcaption');
-      figcaption.className = 'figcaption-image';
-      figcaption.textContent = hero;
+      heroImg.classList.add('image', hero.rank, 'of', hero.kingdom);
+      heroImg.id = hero.name;
+      heroImg.src = 'heroes/' + hero.name + '.jpg';
       divHero.append(figure);
       figure.append(heroImg);
-      figure.append(figcaption);
     });
   },
   cardsForMe: function () {
@@ -152,10 +213,12 @@ let comWidth = 100;
 let computerLife = document.querySelector('.computerlife');
 let myLife = document.querySelector('.mylife');
 let deal = document.querySelector('.deal');
+let divImageHeroes = document.querySelector('.heroes');
 //when DEAL button clicked
 deal.addEventListener('click', function () {
-  let divImageHeroes = document.querySelector('.heroes');
   divImageHeroes.style.display = 'none';
+  let yourScoreSpan = document.querySelector('.you');
+  yourScoreSpan.style.left = '0px';
   if (deal.textContent == 'DEAL') {
     cardsArray = [];
     computerCountSpan.textContent = computerCurrentScore;
@@ -193,6 +256,8 @@ deal.addEventListener('click', function () {
     hit.disabled = false;
     endFunction();
   } else if (deal.textContent == 'PLAY') {
+    let yourScoreSpan = document.querySelector('.you');
+    yourScoreSpan.style.left = '0px';
     let plusByHero = document.querySelector('#plus-by-hero');
     plusByHero.textContent = '';
     myCurrentScore = 0;
@@ -221,6 +286,7 @@ let detectFunction = function () {
     myCountSpan.textContent = myCurrentScore;
   } else if (myCurrentScore == 21) {
     myCountSpan.style.color = 'yellow';
+    hit.disabled = true;
   } else if (myCurrentScore < 10 && myWidth > 129) {
     let divHeroes = document.querySelector('.heroes');
     divHeroes.style.display = 'block';
@@ -249,6 +315,8 @@ let AddHero = function () {
   if (cardsArray.length == 0) {
     return alert("You can't use Blackjack heroes at this time");
   }
+  let yourScoreSpan = document.querySelector('.you');
+  yourScoreSpan.style.left = '-5px';
   let math = Math.floor(Math.random() * 5) + 8;
   let imageForMe = document.createElement('img');
   imageForMe.className = 'card-for-me';
@@ -259,6 +327,7 @@ let AddHero = function () {
   plusByHero.textContent = '+' + heroValue;
   plusByHero.style.color = 'yellow';
   hit.disabled = true;
+  divImageHeroes.style.display = 'none';
   detectFunction();
 };
 let imageHeros = document.querySelectorAll('.image');
@@ -266,6 +335,26 @@ imageHeros.forEach(function (img) {
   img.addEventListener('click', AddHero);
 });
 
+imageHeros.forEach(function (img) {
+  img.addEventListener('mouseover', function () {
+    let heroInfo = document.querySelector('.heroInfo');
+    let heroName = document.querySelector('#strongName');
+    let heroRank = document.querySelector('#strongRank');
+    let nameOfHero = this.id;
+    heroDescription = this.classList;
+    heroRank.textContent = heroDescription.value.slice(6).toUpperCase();
+    heroName.textContent = nameOfHero.toUpperCase();
+    heroInfo.classList.add('heroInfo-class1');
+    heroInfo.style.transform = 'scale(1)';
+    heroInfo.style.transition = '0.9s';
+  });
+});
+imageHeros.forEach(function (img) {
+  img.addEventListener('mouseout', function () {
+    let heroInfo = document.querySelector('.heroInfo');
+    heroInfo.classList.remove('heroInfo-class1');
+  });
+});
 //end of the game
 let messageHeader = document.querySelector('.p-header');
 let endFunction = function () {
@@ -380,9 +469,9 @@ btnYes.addEventListener('mouseout', mouseOut);
 btnNo.addEventListener('mouseout', mouseOut);
 
 //front of the game
+let divOpening = document.querySelector('.opening');
 let btnStart = document.querySelector('#btn-start');
 btnStart.addEventListener('click', function () {
-  let divOpening = document.querySelector('.opening');
   divOpening.style.display = 'none';
   btnQuitPlay.style.display = 'flex';
   btnQuitPlay.style.animationDelay = '5s';
