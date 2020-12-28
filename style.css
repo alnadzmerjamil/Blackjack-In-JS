@@ -89,14 +89,21 @@ body {
   font-family: 'Courier New', Courier, monospace;
   text-transform: uppercase;
 }
+.div-score-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 2.5vw;
+  margin-bottom: 8px;
+}
 .score-label {
   width: 50%;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
-  font-size: 2.5vw;
-  padding-bottom: 8px;
 }
 .tag {
   width: 40%;
@@ -105,6 +112,7 @@ body {
   font-weight: 600;
   color: white;
   margin-right: 1%;
+  margin-top: 1%;
 }
 .for-mylife,
 .for-computerlife {
@@ -118,7 +126,7 @@ body {
   align-items: center;
   height: 14px;
   border: 1px solid white;
-  margin-bottom: 2px;
+  margin-top: 1%;
   padding: 0px 2px;
   overflow: hidden;
 }
@@ -135,7 +143,6 @@ body {
   flex-wrap: wrap;
   justify-content: flex-end;
   align-items: center;
-  padding-bottom: 8px;
   font-size: 2.5vw;
 }
 table,
@@ -192,7 +199,6 @@ table {
 }
 .card-for-me {
   width: 27%;
-  background-color: cadetblue;
   border: 2px solid darkred;
   border-radius: 10px;
   box-shadow: 0 0 5px white;
@@ -215,7 +221,6 @@ table {
   height: 100%;
   backface-visibility: hidden;
   border-radius: 10px;
-  background-color: cadetblue;
   border: 2px solid darkred;
   border-radius: 10px;
   box-shadow: 0 0 5px white;
@@ -231,7 +236,6 @@ table {
   backface-visibility: hidden;
   transform: rotateY(180deg);
   border-radius: 10px;
-  background-color: cadetblue;
   border: 2px solid darkred;
   border-radius: 10px;
   box-shadow: 0 0 5px white;
@@ -245,6 +249,11 @@ table {
   width: 100%;
   padding: 5px;
   background-color: rgba(45, 45, 185, 0.5);
+}
+#heroes-txt {
+  color: lawngreen;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bolder;
 }
 .for-hero-img {
   display: flex;
@@ -301,14 +310,14 @@ table {
   justify-content: center;
 }
 .for-btnquit-btnplay button {
-  width: 15vw;
-  height: 25px;
-  line-height: 25px;
+  width: 70px;
+  height: 35px;
+  line-height: 35px;
+  font-size: 16px;
   font-family: 'Courier New', Courier, monospace;
   text-transform: uppercase;
   color: white;
   font-weight: bolder;
-  font-size: 4vw;
   border-radius: 5px;
   background-color: darkblue;
   border: 1px solid white;
@@ -331,25 +340,23 @@ table {
 }
 .opening {
   position: absolute;
-  top: 20%;
+  top: 18%;
   left: 50%;
   transform: translateY(-25%) translateX(-50%);
   width: 75%;
+  background-color: aliceblue;
 }
 .img-opening {
-  width: 25%;
+  width: 35%;
   position: absolute;
-  top: 20%;
-  left: 30%;
-  transform: translateY(-10%) translateX(-40%);
+  left: 20%;
   border-radius: 10px;
-  box-shadow: 0 0 5px red;
+  box-shadow: 0 0 5px rgb(87, 86, 86);
   transform: skewX(20deg) skewY(-10deg);
 }
 .img-opening1 {
-  width: 25%;
+  width: 35%;
   position: absolute;
-  top: 20%;
   left: 50%;
   transform: translateY(-20%) translateX(-50%);
   border-radius: 10px;
@@ -357,10 +364,9 @@ table {
   z-index: -1;
 }
 .img-opening2 {
-  width: 25%;
+  width: 35%;
   position: absolute;
-  top: 20%;
-  right: 30%;
+  right: 20%;
   transform: skewX(-20deg) skewY(10deg);
   border-radius: 10px;
   box-shadow: 0 0 5px red;
@@ -381,7 +387,7 @@ table {
   background-color: darkblue;
   opacity: 0.6;
   color: whitesmoke;
-  font-size: 3vw;
+  font-size: 4vw;
   font-weight: bolder;
   cursor: pointer;
 }
@@ -500,10 +506,10 @@ table {
     padding-bottom: 12px;
   }
   .for-btnquit-btnplay button {
-    width: 10vw;
-    height: 40px;
-    line-height: 40px;
-    font-size: 3vw;
+    width: 100px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 22px;
   }
   .tag {
     width: 60%;
@@ -625,7 +631,7 @@ table {
     width: 15%;
   }
   .div-for-3btns button {
-    font-size: 1vw;
+    font-size: 1.5vw;
   }
   .heroes {
     width: 75%;
@@ -655,10 +661,10 @@ table {
     padding: 2px 0px 8px 8px;
   }
   .for-btnquit-btnplay button {
-    width: 5vw;
-    height: 40px;
-    line-height: 40px;
-    font-size: 1.5vw;
+    width: 110px;
+    height: 55px;
+    line-height: 55px;
+    font-size: 24px;
   }
   .instruction-show {
     font-size: 1.5vw;

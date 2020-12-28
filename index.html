@@ -24,36 +24,39 @@
       <div class="title">
         <div class="title"><h2 class="bj">Blackjack</h2></div>
       </div>
-      <div class="score-label">
-        <div class="tag">YOU</div>
-        <div class="for-mylife">
-          <div class="mylife-container">
-            <div class="mylife"></div>
+      <div class="div-score-container">
+        <div class="score-label">
+          <div class="tag">YOU</div>
+          <div class="for-mylife">
+            <div class="mylife-container">
+              <div class="mylife"></div>
+            </div>
+          </div>
+          <div class="tag">OPPONENT</div>
+          <div class="for-computerlife">
+            <div class="computerlife-container">
+              <div class="computerlife"></div>
+            </div>
           </div>
         </div>
-        <div class="tag">OPPONENT</div>
-        <div class="for-computerlife">
-          <div class="computerlife-container">
-            <div class="computerlife"></div>
+        <div class="for-score">
+          <div class="score-table">
+            <table>
+              <tr>
+                <th>YOU</th>
+                <th>DRAW</th>
+                <th>OPPONENT</th>
+              </tr>
+              <tr>
+                <td class="td-you">0</td>
+                <td class="td-draw">0</td>
+                <td class="td-computer">0</td>
+              </tr>
+            </table>
           </div>
         </div>
       </div>
-      <div class="for-score">
-        <div class="score-table">
-          <table>
-            <tr>
-              <th>YOU</th>
-              <th>DRAW</th>
-              <th>OPPONENT</th>
-            </tr>
-            <tr>
-              <td class="td-you">0</td>
-              <td class="td-draw">0</td>
-              <td class="td-computer">0</td>
-            </tr>
-          </table>
-        </div>
-      </div>
+
       <div class="container">
         <div class="div-for-cards for-img">
           <div class="for-imgyou">
@@ -71,7 +74,7 @@
           </div>
         </div>
         <div class="heroes">
-          <div style="color: lawngreen"><small>BLACKJACK HEROES</small></div>
+          <div id="heroes-txt"><small>BLACKJACK HEROES</small></div>
           <div class="for-hero-img"></div>
         </div>
         <div class="heroInfo-container">

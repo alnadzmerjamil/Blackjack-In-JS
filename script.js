@@ -160,7 +160,10 @@ let cards = {
         computerCurrentScore -= cardsNum;
       }
       computerCurrentScore += cardsNum;
-      if (cardsArray.length === 4 && computerCurrentScore <= 10) {
+      if (
+        (cardsArray.length === 4 && computerCurrentScore <= 10) ||
+        computerCurrentScore === 22
+      ) {
         i = 0;
       }
     }
@@ -217,8 +220,6 @@ let divImageHeroes = document.querySelector('.heroes');
 //when DEAL button clicked
 deal.addEventListener('click', function () {
   divImageHeroes.style.display = 'none';
-  let yourScoreSpan = document.querySelector('.you');
-  yourScoreSpan.style.left = '0px';
   if (deal.textContent == 'DEAL') {
     cardsArray = [];
     computerCountSpan.textContent = computerCurrentScore;
@@ -412,6 +413,8 @@ btnYes.addEventListener('click', function () {
   btnQuitPlay.style.display = 'flex';
   myCurrentScore = 0;
   myFinalScore = 0;
+  draw = 0;
+
   computerCurrentScore = 0;
   computerFinalScore = 0;
   myCountSpan.textContent = '';
